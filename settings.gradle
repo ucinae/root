@@ -3,4 +3,6 @@ include 'domain:postgresql-domain'
 findProject(':domain:postgresql-domain')?.name = 'postgresql-domain'
 include 'application:root-app'
 findProject(':application:root-app')?.name = 'root-app'
+include 'domain:redis-domain'
+findProject(':domain:redis-domain')?.name = 'redis-domain'
 

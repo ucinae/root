@@ -13,7 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @ToString
@@ -31,10 +31,10 @@ public class Category {
 
     @UpdateTimestamp
     @Column(name = "last_update")
-    private ZonedDateTime lastUpdate;
+    private LocalDateTime lastUpdate;
 
     @Builder
-    public Category(String name, ZonedDateTime lastUpdate) {
+    public Category(String name, LocalDateTime lastUpdate) {
         this.name = name;
         this.lastUpdate = lastUpdate;
     }
