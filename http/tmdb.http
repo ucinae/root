@@ -1,0 +1,6 @@
+GET https://api.themoviedb.org/3/movie/76341
+Accept: application/json
+Authorization: Bearer {{tmdb-bearer-token}}
+Content-Type: application/json;charset=utf-8
+
+###

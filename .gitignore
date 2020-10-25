@@ -36,5 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-### application-prod.yml ###
+### private info ###
 application-prod.yml
+http-client.private.env.json

@@ -12,4 +12,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 public class TmdbProperties {
 
     private String apiKey;
+
+    private String bearerToken;
 }
