@@ -2,10 +2,10 @@ package com.ucinae.root.client;
 
 import com.ucinae.root.dto.res.MovieDetailsRes;
 import com.ucinae.root.properties.TmdbProperties;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,14 @@ public class TmdbClient {
     private final TmdbProperties tmdbProperties;
     private final RestTemplate restTemplate;
 
-    private static final String TMDB_BASE_URL = "https://api.themoviedb.org";
+    @Getter
+    @AllArgsConstructor
+    private enum PATH {
+        GET_DETAILS("/3/movie/")
+        ;
+
+        private final String api;
+    }
 
     private HttpHeaders getHeaders() {
         HttpHeaders headers = new HttpHeaders();
@@ -32,7 +39,7 @@ public class TmdbClient {
     public MovieDetailsRes getMovieDetail(Integer movieId) {
 
         RequestEntity<Void> requestEntity = RequestEntity
-                .get(URI.create(TMDB_BASE_URL))
+                .get(URI.create(tmdbProperties.getTmdbBaseUrl() + PATH.GET_DETAILS.getApi() + movieId))
                 .accept(MediaType.APPLICATION_JSON)
                 .headers(getHeaders())
                 .build();
