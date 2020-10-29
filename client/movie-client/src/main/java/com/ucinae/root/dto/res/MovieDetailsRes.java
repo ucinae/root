@@ -15,7 +15,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -49,9 +49,8 @@ public class MovieDetailsRes {
     @JsonProperty("production_countries")
     private List<ProductionCountry> productionCountries;
     @JsonProperty("release_date")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDateTime releaseDate;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate releaseDate;
     private Integer revenue;
     private Integer runtime;
     @JsonProperty("spoken_languages")
