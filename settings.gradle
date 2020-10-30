@@ -7,4 +7,6 @@ include 'domain:redis-domain'
 findProject(':domain:redis-domain')?.name = 'redis-domain'
 include 'client:movie-client'
 findProject(':client:movie-client')?.name = 'movie-client'
+include 'domain:mariadb-domain'
+findProject(':domain:mariadb-domain')?.name = 'mariadb-domain'
 
