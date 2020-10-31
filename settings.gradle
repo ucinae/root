@@ -9,4 +9,6 @@ include 'client:movie-client'
 findProject(':client:movie-client')?.name = 'movie-client'
 include 'domain:mariadb-domain'
 findProject(':domain:mariadb-domain')?.name = 'mariadb-domain'
+include 'application:rabbitmq'
+findProject(':application:rabbitmq')?.name = 'rabbitmq'
 
