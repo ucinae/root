@@ -1,0 +1,4 @@
+naver:
+  base-uri: https://openapi.naver.com
+  client-id: client-id
+  client-secret: client-secret
