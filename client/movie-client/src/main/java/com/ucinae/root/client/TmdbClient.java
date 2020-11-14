@@ -5,6 +5,7 @@ import com.ucinae.root.properties.TmdbProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
@@ -15,6 +16,7 @@ import java.net.URI;
 
 @Component
 @RequiredArgsConstructor
+@EnableConfigurationProperties(TmdbProperties.class)
 public class TmdbClient {
     private final TmdbProperties tmdbProperties;
     private final RestTemplate restTemplate;
