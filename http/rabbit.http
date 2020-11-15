@@ -1,0 +1,12 @@
+GET http://localhost:8080/rabbit/sample/123
+Accept: application/json
+
+###
+
+PUT http://localhost:8080/amqp/start
+
+###
+
+PUT http://localhost:8080/amqp/stop
+
+###

@@ -1,5 +1,6 @@
 package com.ucinae.root.dto;
 
+import com.ucinae.root.model.RabbitVariety;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -19,4 +20,5 @@ public class RabbitDto {
     private String name;
     private Integer age;
     private Date birth;
+    private RabbitVariety variety;
 }

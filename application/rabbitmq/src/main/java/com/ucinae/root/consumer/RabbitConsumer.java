@@ -22,7 +22,14 @@ public class RabbitConsumer implements RabbitConsumerInterface {
             id = RabbitConstants.RABBIT.LISTENER,
             containerFactory = RabbitConstants.CONTAINER_FACTORY
     )
-    public void rabbitConsumer(RabbitDto rabbitDto, @Header("x-redelivered-count") Integer count) {
+    public void rabbitConsumer(RabbitDto rabbitDto, @Header(value = "x-redelivered-count", required = false) Integer count) {
+
+        int nextCount = count == null ? 1 : count + 1;
+
+        if (nextCount > 5) {
+            log.info("count over 5..");
+            return;
+        }
 
         log.info("** count = {}", count);
         log.info("** rabbitDto = {}", rabbitDto);
@@ -32,8 +39,8 @@ public class RabbitConsumer implements RabbitConsumerInterface {
                 RabbitConstants.RABBIT.ROUTING_KEY,
                 rabbitDto,
                 p -> {
-                    p.getMessageProperties().setDelay(60 * 1000);
-                    p.getMessageProperties().setHeader("x-redelivered-count", count + 1);
+                    p.getMessageProperties().setDelay(5 * 1000);
+                    p.getMessageProperties().setHeader("x-redelivered-count", nextCount);
                     return p;
                 }
         );
