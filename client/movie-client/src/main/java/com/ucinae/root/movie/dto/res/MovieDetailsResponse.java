@@ -1,12 +1,12 @@
-package com.ucinae.root.dto.res;
+package com.ucinae.root.movie.dto.res;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.ucinae.root.model.Genre;
-import com.ucinae.root.model.Language;
-import com.ucinae.root.model.MovieCollection;
-import com.ucinae.root.model.ProductionCompany;
-import com.ucinae.root.model.ProductionCountry;
+import com.ucinae.root.movie.model.Genre;
+import com.ucinae.root.movie.model.Language;
+import com.ucinae.root.movie.model.MovieCollection;
+import com.ucinae.root.movie.model.ProductionCompany;
+import com.ucinae.root.movie.model.ProductionCountry;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,7 +24,8 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovieDetailsRes {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class MovieDetailsResponse {
     private Boolean adult;
     @JsonProperty("backdrop_path")
     private String backdropPath;

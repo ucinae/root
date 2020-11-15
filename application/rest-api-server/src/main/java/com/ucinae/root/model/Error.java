@@ -13,9 +13,10 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductionCompany {
-    private Long id;
-    private String logoPath;
-    private String name;
-    private String originCountry;
+public class Error {
+    private String domain;
+    private String reason;
+    private String message;
+    private String location;
+    private String locationType;
 }

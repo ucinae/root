@@ -1,6 +1,7 @@
 package com.ucinae.root.properties;
 
 import com.ucinae.root.MovieClientTests;
+import com.ucinae.root.movie.properties.TmdbProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

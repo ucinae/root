@@ -1,10 +1,11 @@
-package com.ucinae.root.client;
+package com.ucinae.root.movie.client;
 
-import com.ucinae.root.dto.res.MovieDetailsRes;
-import com.ucinae.root.properties.TmdbProperties;
+import com.ucinae.root.movie.dto.res.MovieDetailsResponse;
+import com.ucinae.root.movie.properties.TmdbProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -14,6 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.URI;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 @EnableConfigurationProperties(TmdbProperties.class)
@@ -38,7 +40,7 @@ public class TmdbClient {
         return headers;
     }
 
-    public MovieDetailsRes getMovieDetail(Integer movieId) {
+    public MovieDetailsResponse getMovieDetail(Integer movieId) {
 
         RequestEntity<Void> requestEntity = RequestEntity
                 .get(URI.create(tmdbProperties.getTmdbBaseUrl() + PATH.GET_DETAILS.getApi() + movieId))
@@ -46,6 +48,6 @@ public class TmdbClient {
                 .headers(getHeaders())
                 .build();
 
-        return restTemplate.exchange(requestEntity, MovieDetailsRes.class).getBody();
+        return restTemplate.exchange(requestEntity, MovieDetailsResponse.class).getBody();
     }
 }

@@ -1,6 +1,6 @@
 package com.ucinae.root;
 
-import com.ucinae.root.properties.TmdbProperties;
+import com.ucinae.root.movie.properties.TmdbProperties;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 

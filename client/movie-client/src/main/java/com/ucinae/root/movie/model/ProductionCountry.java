@@ -1,4 +1,4 @@
-package com.ucinae.root.model;
+package com.ucinae.root.movie.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,9 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class MovieCollection {
-    private Long id;
+public class ProductionCountry {
+    private String iso3166;
     private String name;
-    private String posterPath;
-    private String backdropPath;
 }

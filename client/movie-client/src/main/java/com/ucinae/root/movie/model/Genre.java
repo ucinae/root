@@ -1,4 +1,4 @@
-package com.ucinae.root.model;
+package com.ucinae.root.movie.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Language {
-    private String iso639;
+public class Genre {
+    private Long id;
     private String name;
 }

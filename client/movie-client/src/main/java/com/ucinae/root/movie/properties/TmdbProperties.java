@@ -1,4 +1,4 @@
-package com.ucinae.root.properties;
+package com.ucinae.root.movie.properties;
 
 import lombok.Getter;
 import lombok.Setter;

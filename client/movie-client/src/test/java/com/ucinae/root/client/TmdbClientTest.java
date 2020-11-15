@@ -1,7 +1,8 @@
 package com.ucinae.root.client;
 
 import com.ucinae.root.MovieClientTests;
-import com.ucinae.root.dto.res.MovieDetailsRes;
+import com.ucinae.root.movie.client.TmdbClient;
+import com.ucinae.root.movie.dto.res.MovieDetailsResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,11 @@ class TmdbClientTest extends MovieClientTests {
         Integer expectedMovieId = 475557;
 
         // when
-        MovieDetailsRes actualMovieDetailsRes = tmdbClient.getMovieDetail(expectedMovieId);
+        MovieDetailsResponse actualMovieDetailsResponse = tmdbClient.getMovieDetail(expectedMovieId);
 
         // then
-        log.info("MovieDetail = {}", actualMovieDetailsRes);
-        then(actualMovieDetailsRes.getId()).isEqualTo(expectedMovieId);
+        log.info("MovieDetail = {}", actualMovieDetailsResponse);
+        then(actualMovieDetailsResponse.getId()).isEqualTo(expectedMovieId);
     }
 
 }

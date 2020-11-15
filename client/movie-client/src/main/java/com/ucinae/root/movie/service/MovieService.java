@@ -1,4 +1,4 @@
-package com.ucinae.root.service;
+package com.ucinae.root.movie.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

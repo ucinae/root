@@ -1,0 +1,22 @@
+POST http://localhost:8080/api/v1/films
+Content-Type: application/json
+
+{
+  "title": "",
+  "releaseDate": "",
+  "overview": "",
+  "budget": "",
+  "genre": "SF"
+}
+
+###
+
+GET http://localhost:8080/api/v1/films/str
+Accept: application/json
+
+###
+
+GET http://localhost:8080/health
+Accept: application/json
+
+###
