@@ -11,7 +11,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/api/v1/films/str
+GET http://localhost:8080/api/v1/films/76341
 Accept: application/json
 
 ###
